@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Posts</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Blog Posts</h1>
+        <% if (blogpost.length > 0) { %>
+            <ul class="blog-list">
+                <% blogpost.forEach(function(post) { %>
+                    <li class="blog-item">
+                        <h3>Author: <%= post.name %></h3>
+                        <p><%= post.post %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No blog posts yet!</p>
+        <% } %>
+    </div>
+</body>
+</html>
